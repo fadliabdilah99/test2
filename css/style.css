@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300;1,400&family=Dancing+Script:wght@400;600;700&family=Playball&display=swap");
+
+
+
+
+/* test */
+/* Gaya overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  visibility: visible;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay-content {
+  background: rgb(255, 255, 255);
+  height: 100vh;
+}
+
+.btn-open {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-open svg {
+  margin-right: 8px;
+}
+
+/* CSS untuk menonaktifkan scroll */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* test end */
+
+
+
+
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+
+.font-playball {
+  font-family: "Playball", cursive;
+}
+
+* {
+  font-family: "Open Sans", cursive;
+}
+
+.bg-berem {
+  background-color: #05bcdb;
+}
+
+.text-berem {
+  color: #828191;
+}
+
+.bg-wakwak {
+  background-color: #ffff;
+}
+
+.text-wakwak {
+  background-color: #ffff;
+}
+
+.bg-fee {
+  /* background-color: #f6f6f6; */
+}
+
+.bg-kulit {
+  background-color: #ffc7c7;
+}
+
+.fs-60 {
+  font-size: 60px;
+}
+
+.fs-45 {
+  font-size: 45px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.scale {
+  overflow: hidden;
+  transition: 0.5s;
+}
+.scale:hover {
+  transform: scale(1.05);
+}
+
+.norek {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  #front-image {
+    display: none;
+  }
+  #front-text {
+    padding-top: 40%;
+    height: 100vh;
+    background-image: url(../img/mobile.png);
+    background-size: cover;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.8); 
+  }
+  .background-image {
+    background-image: url(../img/mobile.png) !important;
+  }
+}
+
+
+#front-image img {
+  width: 400px;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.background-image {
+  background-image: url(../img/bg.png);
+  background-size: cover; /* Mengubah ukuran gambar agar menutupi elemen */
+  background-position: center; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.background-color {
+  background-color: aliceblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.event-title {
+  margin-top: 5rem; /* Margin atas untuk judul acara */
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Margin atas untuk container timer */
+}
+
+.timer-box {
+}
+
+.timer-card {
+  padding: 15px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  /* background-color: #6c757d; Warna latar belakang card */
+  color: white; /* Warna teks */
+  text-align: center; /* Memusatkan teks di dalam card */
+}
+
+
+.timer {
+  margin: 0; /* Menghilangkan margin pada elemen timer */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .background-image {
+    background-size: cover; /* Gambar tetap menutupi area meski dalam ukuran kecil */
+  }
+
+  .map-responsive {
+    padding-bottom: 40.25%;
+  }
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  
+
+  .container {
+    padding: 20px; /* Memberikan sedikit padding pada konten */
+  }
+}
+
+/* Responsif untuk perangkat yang sangat kecil */
+@media (max-width: 576px) {
+  .font-dancing {
+    font-size: 2.5rem; /* Mengurangi ukuran font untuk perangkat kecil */
+  }
+
+  .fs-60 {
+    font-size: 3rem; /* Mengurangi ukuran font h1 */
+  }
+
+  .timer-card {
+    padding: 10px; /* Mengurangi padding untuk card */
+    /* border: none; */
+  }
+}
+
+/* Anda bisa menambahkan lebih banyak CSS sesuai kebutuhan */
