@@ -42,18 +42,22 @@ salin1.onclick = () => {
 // copy end
 
 // waktu start
+
 const countDownDate = new Date("Saturday, August 24, 2024 08:00:00").getTime();
 const x = setInterval(function () {
   const now = new Date().getTime();
   const distance = countDownDate - now;
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
   document.getElementById("hari").innerHTML = days;
   document.getElementById("jam").innerHTML = hours;
   document.getElementById("menit").innerHTML = minutes;
   document.getElementById("detik").innerHTML = seconds;
+
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("Carasingkat").innerHTML = "EXPIRED";
