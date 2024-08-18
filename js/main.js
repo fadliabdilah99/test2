@@ -25,6 +25,20 @@ $(document).ready(function () {
 });
 // owl carousel end
 
+// Function to simulate loading process
+function simulateLoading() {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 3000); // Simulate loading for 3 seconds
+  });
+}
+
+// Run the loading simulation
+simulateLoading().then(() => {
+  // Hide the loading screen and show the main content
+  document.getElementById("loading-screen").style.display = "none";
+  document.getElementById("main-content").classList.remove("hidden");
+});
+
 // copy start
 const rek1 = document.getElementById("rek1");
 const salin1 = document.getElementById("salin1");
@@ -48,10 +62,18 @@ const x = setInterval(function () {
   const now = new Date().getTime();
   const distance = countDownDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+    .toString()
+    .padStart(2, "0");
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    .toString()
+    .padStart(2, "0");
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    .toString()
+    .padStart(2, "0");
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+    .toString()
+    .padStart(2, "0");
 
   document.getElementById("hari").innerHTML = days;
   document.getElementById("jam").innerHTML = hours;
