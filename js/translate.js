@@ -14,7 +14,8 @@ document.getElementById("translateBtn").addEventListener("click", function () {
   document.getElementById("Guaranteed-des").textContent = "Customer satisfaction is our top priority. We are ready to serve you wholeheartedly.";
   document.getElementById("shopping").textContent = "Shop Through Our Website";
   document.getElementById("shopping-t").textContent = "Scan the QR code below to order via our website";
-  document.getElementById("shopping-des").textContent = "We offer a wide range of quality products designed to meet your needs and desires. Discover our collection of clothing, accessories, and other fashion items that will elevate your style. With an easy ordering system, you can shop comfortably from home. Enjoy a safe and fast shopping experience, and take advantage of exciting offers every day. We are committed to providing the best service to ensure your satisfaction with every purchase. So, don't hesitate to explore our catalog and find your favorite items!";
+  document.getElementById("shopping-des").textContent =
+    "We offer a wide range of quality products designed to meet your needs and desires. Discover our collection of clothing, accessories, and other fashion items that will elevate your style. With an easy ordering system, you can shop comfortably from home. Enjoy a safe and fast shopping experience, and take advantage of exciting offers every day. We are committed to providing the best service to ensure your satisfaction with every purchase. So, don't hesitate to explore our catalog and find your favorite items!";
   document.getElementById("lokasi").textContent = "Location";
   document.getElementById("btn-gmap").textContent = "Open Google Maps";
   document.getElementById("confirm").textContent = "Confirm your attendance";
@@ -39,4 +40,20 @@ document.getElementById("translateBtn").addEventListener("click", function () {
 
 document.getElementById("refreshBtn").addEventListener("click", function () {
   location.reload(); // Refresh halaman
+});
+document.getElementById("refreshBtn2").addEventListener("click", function () {
+  location.reload(); // Refresh halaman
+});
+
+document.getElementById("translateBtn2").addEventListener("click", function () {
+  document.getElementById("translateBtn2").style.display = "none";
+  document.getElementById("refreshBtn2").style.display = "block";
+
+  document.getElementById("jam2").textContent = "Hour";
+  document.getElementById("hari2").textContent = "Day";
+  document.getElementById("menit2").textContent = "Minute";
+  document.getElementById("detik2").textContent = "Second";
+  document.getElementById("des-home").textContent = "A fashion exhibition that will change the way you view style.";
+  document.getElementById("when").textContent = "will take place on";
+  document.getElementById("invite").textContent = "We invite you";
 });
