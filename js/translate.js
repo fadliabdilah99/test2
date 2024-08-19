@@ -2,8 +2,8 @@ document.getElementById("translateBtn").addEventListener("click", function () {
   document.getElementById("translateBtn").style.display = "none";
   document.getElementById("refreshBtn").style.display = "block";
 
-  document.getElementById("tanggal").textContent = "Saturday, 24-08-2024";
-  document.getElementById("tanggal2").textContent = "Saturday, 24-08-2024";
+  document.getElementById("tanggal").textContent = "Thursday, 5-09-2024";
+  document.getElementById("tanggal2").textContent = "Thursday, 5-09-2024";
   document.getElementById("alerts").textContent = "Calling all Fashion fans";
   document.getElementById("alerts-des").textContent = "Calling all Fashion who wants to Fashion update, Please come and join JI Premium at our booth FNPbyFlorina Sell Up to 50%, FNPbyFlorina to update your style See you there!";
   document.getElementById("discount").textContent = "Get Discount";
