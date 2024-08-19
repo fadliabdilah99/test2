@@ -25,6 +25,61 @@ $(document).ready(function () {
 });
 // owl carousel end
 
+
+
+
+
+window.addEventListener("load", function () {
+  const form = document.getElementById("my-form");
+  const loadingModal = new bootstrap.Modal(document.getElementById("loadingModal"));
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    loadingModal.show(); // Tampilkan modal loading
+
+    const data = new FormData(form);
+    const action = e.target.action;
+
+    fetch(action, {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        alert("Berhasil mengisi Kehadiran");
+        form.reset();
+        loadingModal.hide(); // Sembunyikan modal loading
+
+        // Tambahkan kode untuk mengunduh file
+        fetch("img/vocher.png")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.blob();
+          })
+          .then((blob) => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.style.display = "none";
+            a.href = url;
+            a.download = "vocher.png"; // hanya nama file
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+          })
+          .catch((error) => console.error("Download error:", error));
+      })
+      .catch((error) => {
+        console.error("Submission error:", error);
+        loadingModal.hide(); // Sembunyikan modal loading saat ada error
+      });
+  });
+});
+
+
+
+
+
 // Function to simulate loading process
 function simulateLoading() {
   return new Promise((resolve) => {
@@ -133,60 +188,6 @@ function openInvitation() {
   }, 500); // Waktu delay sama dengan durasi animasi
 }
 
-// Tampilkan overlay dan nonaktifkan scroll saat halaman dimuat
-window.onload = function () {
-  document.getElementById("overlay").style.display = "flex";
-  document.body.classList.add("no-scroll");
-};
-// modal end
-
 document.getElementById("openInvitation").addEventListener("click", function () {
   document.getElementById("overlay").style.display = "none";
-});
-
-window.addEventListener("load", function () {
-  const form = document.getElementById("my-form");
-  const loadingModal = new bootstrap.Modal(document.getElementById("loadingModal"));
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    loadingModal.show(); // Tampilkan modal loading
-
-    const data = new FormData(form);
-    const action = e.target.action;
-
-    fetch(action, {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
-        alert("Berhasil mengisi Kehadiran");
-        form.reset();
-        loadingModal.hide(); // Sembunyikan modal loading
-
-        // Tambahkan kode untuk mengunduh file
-        fetch("img/vocher.png")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.blob();
-          })
-          .then((blob) => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.style.display = "none";
-            a.href = url;
-            a.download = "vocher.png"; // hanya nama file
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-          })
-          .catch((error) => console.error("Download error:", error));
-      })
-      .catch((error) => {
-        console.error("Submission error:", error);
-        loadingModal.hide(); // Sembunyikan modal loading saat ada error
-      });
-  });
 });
